@@ -1,11 +1,18 @@
 class HangmanCanvas {
   constructor(secretWord) {
     this.context = document.getElementById('hangman').getContext('2d');
-    // ... your code goes here
+    this.canvas = document.getElementById('hangman');
+    this.context = this.canvas.getContext('2d');
+    this.secretWord = secretWord;
+    this.hangmanParts = ['head', 'body', 'rightArm', 'rightHand', 'leftArm', 'leftHand', 'rightLeg', 'rightFoot', 'leftLeg', 'leftFoot'];
+    this.context.strokeStyle = 'black';
+    this.context.textAlign = 'center';
+    this.context.font = '48px Georgia';
+
   }
 
   createBoard() {
-    // ... your code goes here
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
   drawLines() {
